@@ -1,1 +1,61 @@
-/* You can add global styles to this file, and also import other style files */
+.custom-tooltip {
+  position: fixed;
+  background-color: #333;
+  color: white;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  max-width: 300px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(5px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.custom-tooltip.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tooltip-content {
+  position: relative;
+  z-index: 2;
+}
+
+.tooltip-arrow {
+  --size: 12px;
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  background: inherit;
+  transform: rotate(45deg);
+  z-index: 1;
+}
+
+.arrow-top {
+  bottom: calc(-1 * var(--size) / 2);
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.arrow-bottom {
+  top: calc(-1 * var(--size) / 2);
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.arrow-left {
+  right: calc(-1 * var(--size) / 2);
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.arrow-right {
+  left: calc(-1 * var(--size) / 2);
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
