@@ -1,6 +1,7 @@
 .custom-tooltip {
   position: fixed;
   background-color: #333;
+  border: 1px solid black;
   color: white;
   padding: 1rem;
   border-radius: 6px;
@@ -19,6 +20,9 @@
 .custom-tooltip.show {
   opacity: 1;
   transform: translateY(0);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
 .tooltip-content {

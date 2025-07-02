@@ -53,6 +53,10 @@ export class MirTooltipDirective implements OnDestroy, OnInit {
   @HostListener('mouseleave')
   hideTooltip() {
     clearTimeout(this.positionTimeout);
+    this.renderer.removeClass(this.tooltipElement, 'show');
+    setTimeout(() => {
+      this.destroyTooltip();
+    }, 10);
     this.destroyTooltip();
   }
 
@@ -115,7 +119,7 @@ export class MirTooltipDirective implements OnDestroy, OnInit {
       top: hostRect.top + scrollY - tooltipRect.height - spacing,
       left: hostRect.left + hostRect.width / 2 - tooltipRect.width / 2,
       arrowClass: 'bottom',
-      arrowPosition: { left: '50%', top: '100%' },
+      arrowPosition: { left: '50%', top: '50%' },
     };
 
     positions.bottom = {
