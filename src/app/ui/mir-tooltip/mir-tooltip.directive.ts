@@ -130,7 +130,7 @@ export class MirTooltipDirective implements OnDestroy, OnInit {
         hostRect.top + scrollY + hostRect.height / 2 - tooltipRect.height / 2,
       left: hostRect.left + scrollX - tooltipRect.width - spacing,
       arrowClass: 'right',
-      arrowPosition: { left: '100%', top: '50%' },
+      arrowPosition: { left: 'calc(100% - 1.5rem)', top: '50%' },
     };
 
     positions.right = {
